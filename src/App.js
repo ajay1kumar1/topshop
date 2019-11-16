@@ -30,13 +30,13 @@ class App extends Component {
 
   render() {
     const { shops, searchField } = this.state;
-    const filteredshops = shops.filter(monster =>
-      monster.name.toLowerCase().includes(searchField.toLowerCase())
+    const filteredshops = shops.filter(shop =>
+      shop.name.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
       <div className='App'>
-        <h1>shops Rolodex</h1>
+        <h1>shops list</h1>
         <SearchBox onSearchChange={this.onSearchChange} />
         <CardList shops={filteredshops} />
       </div>
