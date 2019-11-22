@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 import { CardList } from './components/card-list/card-list.component';
 import { SearchBox } from './components/search-box/search-box.component';
+const apiKey = 'Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx';
+const searchRequest = {
+  term:'ice cream',
+  location: 'Alpharetta'
+};
 
 import './App.css';
 import allVars from './sample';
@@ -16,11 +21,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-  /*  fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(users => this.setState({ shops: users }));
-      */
-     this.setState({ shops: allVars })
+
+    const access_token = apiKey;
+
+let myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer " + access_token);
+
+fetch("https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=bars&limit=50&location=New York", {
+  headers: myHeaders 
+}).then((res) => {
+  return res.json();
+}).then((users) => {
+  console.log(users);
+});
+
+
   }
 
 

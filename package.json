@@ -1,12 +1,13 @@
 {
-  "name": "monsters-rolodex",
+  "name": "TopShop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zhangmyihua.github.io/monsters-rolodex",
+  "homepage": "https://github.com/ajay1kumar1/topshop",
   "dependencies": {
     "gh-pages": "2.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "yelp-fusion": "^2.0.2"
   },
   "devDependencies": {
     "react-scripts": "3.0.0"
